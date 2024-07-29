@@ -1,0 +1,856 @@
+{
+	"info": {
+		"_postman_id": "eb558774-4023-4185-9fdf-3d95b5be2de5",
+		"name": "API Samples",
+		"description": "Sample working API calls which are tested by the team and are working as expected.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"APIUser\",\n\t\"password\": \"Apiuser1234\"\n}"
+				},
+				"url": {
+					"raw": "https://devservicestest-demo.myobadvanced.com/entity/auth/login",
+					"protocol": "https",
+					"host": [
+						"devservicestest-demo",
+						"myobadvanced",
+						"com"
+					],
+					"path": [
+						"entity",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"APIUser\",\n\t\"password\": \"Apiuser1234\"\n}"
+				},
+				"url": {
+					"raw": "https://devservicestest-demo.myobadvanced.com/entity/auth/logout",
+					"protocol": "https",
+					"host": [
+						"devservicestest-demo",
+						"myobadvanced",
+						"com"
+					],
+					"path": [
+						"entity",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Business Accounts List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://devservicestest-demo.myobadvanced.com/entity/Default/17.200.001/BusinessAccount",
+					"protocol": "https",
+					"host": [
+						"devservicestest-demo",
+						"myobadvanced",
+						"com"
+					],
+					"path": [
+						"entity",
+						"Default",
+						"17.200.001",
+						"BusinessAccount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Individual Business Account Record",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://devservicestest-demo.myobadvanced.com/entity/Default/17.200.001/BusinessAccount/ABCSTUDIOS",
+					"protocol": "https",
+					"host": [
+						"devservicestest-demo",
+						"myobadvanced",
+						"com"
+					],
+					"path": [
+						"entity",
+						"Default",
+						"17.200.001",
+						"BusinessAccount",
+						"ABCSTUDIOS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Expand Entity on Sub Entity",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://devservicestest-demo.myobadvanced.com/entity/Default/17.200.001/BusinessAccount/ABCSTUDIOS?$expand=MainAddress",
+					"protocol": "https",
+					"host": [
+						"devservicestest-demo",
+						"myobadvanced",
+						"com"
+					],
+					"path": [
+						"entity",
+						"Default",
+						"17.200.001",
+						"BusinessAccount",
+						"ABCSTUDIOS"
+					],
+					"query": [
+						{
+							"key": "$expand",
+							"value": "MainAddress"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get List restircting result to the selected columns",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://devservicestest-demo.myobadvanced.com/entity/Default/17.200.001/BusinessAccount?$select=BusinessAccountID, Name, Type, Status",
+					"protocol": "https",
+					"host": [
+						"devservicestest-demo",
+						"myobadvanced",
+						"com"
+					],
+					"path": [
+						"entity",
+						"Default",
+						"17.200.001",
+						"BusinessAccount"
+					],
+					"query": [
+						{
+							"key": "$select",
+							"value": "BusinessAccountID, Name, Type, Status"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get GL Account List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://devservicestest-demo.myobadvanced.com/entity/Default/17.200.001/Account",
+					"protocol": "https",
+					"host": [
+						"devservicestest-demo",
+						"myobadvanced",
+						"com"
+					],
+					"path": [
+						"entity",
+						"Default",
+						"17.200.001",
+						"Account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get AP Bill List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://devservicestest-demo.myobadvanced.com/entity/Default/17.200.001/Bill",
+					"protocol": "https",
+					"host": [
+						"devservicestest-demo",
+						"myobadvanced",
+						"com"
+					],
+					"path": [
+						"entity",
+						"Default",
+						"17.200.001",
+						"Bill"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Individual Bill ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://devservicestest-demo.myobadvanced.com/entity/Default/17.200.001/Bill/Bill/001682",
+					"protocol": "https",
+					"host": [
+						"devservicestest-demo",
+						"myobadvanced",
+						"com"
+					],
+					"path": [
+						"entity",
+						"Default",
+						"17.200.001",
+						"Bill",
+						"Bill",
+						"001682"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Purchase order with Details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://devservicestest-demo.myobadvanced.com/entity/Default/17.200.001/PurchaseOrder/Normal/002219?$expand=Details",
+					"protocol": "https",
+					"host": [
+						"devservicestest-demo",
+						"myobadvanced",
+						"com"
+					],
+					"path": [
+						"entity",
+						"Default",
+						"17.200.001",
+						"PurchaseOrder",
+						"Normal",
+						"002219"
+					],
+					"query": [
+						{
+							"key": "$expand",
+							"value": "Details"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Expand the Bill details and Tax Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://devservicestest-demo.myobadvanced.com/entity/Default/17.200.001/Bill/Bill/001682?$expand=Details,TaxDetails",
+					"protocol": "https",
+					"host": [
+						"devservicestest-demo",
+						"myobadvanced",
+						"com"
+					],
+					"path": [
+						"entity",
+						"Default",
+						"17.200.001",
+						"Bill",
+						"Bill",
+						"001682"
+					],
+					"query": [
+						{
+							"key": "$expand",
+							"value": "Details,TaxDetails"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Business Account Main Address",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://devservicestest-demo.myobadvanced.com/entity/Default/17.200.001/BusinessAccount/ABCSTUDIOS?$expand=MainAddress",
+					"protocol": "https",
+					"host": [
+						"devservicestest-demo",
+						"myobadvanced",
+						"com"
+					],
+					"path": [
+						"entity",
+						"Default",
+						"17.200.001",
+						"BusinessAccount",
+						"ABCSTUDIOS"
+					],
+					"query": [
+						{
+							"key": "$expand",
+							"value": "MainAddress"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Expand Tax Categories",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://devservicestest-demo.myobadvanced.com/entity/Default/17.200.001/TaxCategory?$expand=Details",
+					"protocol": "https",
+					"host": [
+						"devservicestest-demo",
+						"myobadvanced",
+						"com"
+					],
+					"path": [
+						"entity",
+						"Default",
+						"17.200.001",
+						"TaxCategory"
+					],
+					"query": [
+						{
+							"key": "$expand",
+							"value": "Details"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tax Category List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://devservicestest-demo.myobadvanced.com/entity/Default/17.200.001/TaxCategory",
+					"protocol": "https",
+					"host": [
+						"devservicestest-demo",
+						"myobadvanced",
+						"com"
+					],
+					"path": [
+						"entity",
+						"Default",
+						"17.200.001",
+						"TaxCategory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Vendor",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"PaymentMethod\": {\r\n        \"value\": \"AUWBCDC\"\r\n    },\r\n   \r\n    \"Terms\": {\r\n        \"value\": \"CASHONLY\"\r\n    },\r\n    \"VendorClass\": {\r\n        \"value\": \"DEFAULT\"\r\n    },\r\n    \"VendorID\": {\r\n        \"value\": \"ABC12345\"\r\n    },\r\n    \"VendorName\": {\r\n        \"value\": \"ABC 12345 Test\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "https://devservicestest-demo.myobadvanced.com/entity/Default/17.200.001/Vendor",
+					"protocol": "https",
+					"host": [
+						"devservicestest-demo",
+						"myobadvanced",
+						"com"
+					],
+					"path": [
+						"entity",
+						"Default",
+						"17.200.001",
+						"Vendor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vendor with Payment Instructions",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"id\": \"2ceaf60f-951e-4419-8c41-beb9178c2d40\",\r\n    \"rowNumber\": 1,\r\n\r\n    \"PaymentInstructions\": [\r\n        {\r\n            \"id\": \"0f572045-64cf-4faf-ae89-e5aac80089de\",\r\n            \"rowNumber\": 1,\r\n            \"note\": null,\r\n            \"Description\": {\r\n                \"value\": \"Account Number\"\r\n            },\r\n            \"PaymentInstructionsID\": {\r\n                \"value\": \"1\"\r\n            },\r\n            \"PaymentMethod\": {\r\n                \"value\": \"AUWBCDC\"\r\n            },\r\n            \"Value\": {\r\n            \t\"value\": \"12345688\"\r\n            },\r\n            \"custom\": {},\r\n            \"files\": []\r\n        },\r\n        {\r\n            \"id\": \"133c6ea6-2eee-4870-b56d-12838b8c8edc\",\r\n            \"rowNumber\": 2,\r\n            \"note\": null,\r\n            \"Description\": {\r\n                \"value\": \"Title of Account\"\r\n            },\r\n            \"PaymentInstructionsID\": {\r\n                \"value\": \"2\"\r\n            },\r\n            \"PaymentMethod\": {\r\n                \"value\": \"AUWBCDC\"\r\n            },\r\n            \"Value\": {\r\n            \t\"value\": \"Test MYOB\"\r\n            },\r\n            \"custom\": {},\r\n            \"files\": []\r\n        },\r\n        {\r\n             \"id\": \"c51056fe-010c-4a5f-baf3-443ee1f0a424\",\r\n            \"rowNumber\": 3,\r\n            \"note\": null,\r\n            \"Description\": {\r\n                \"value\": \"BSB Number\"\r\n            },\r\n           \r\n            \"PaymentInstructionsID\": {\r\n                \"value\": \"3\"\r\n            },\r\n            \"PaymentMethod\": {\r\n                \"value\": \"AUWBCDC\"\r\n            },\r\n            \"Value\": {\r\n            \t\"value\": \"111-333\"\r\n            },\r\n            \"custom\": {},\r\n            \"files\": []\r\n        }\r\n    ],\r\n   \r\n    \"PaymentMethod\": {\r\n        \"value\": \"AUWBCDC\"\r\n    },\r\n\r\n    \"Terms\": {\r\n        \"value\": \"CASHONLY\"\r\n    },\r\n   \r\n    \"VendorClass\": {\r\n        \"value\": \"DEFAULT\"\r\n    },\r\n    \"VendorID\": {\r\n        \"value\": \"ABC12345\"\r\n    },\r\n    \r\n    \"VendorName\": {\r\n        \"value\": \"ABC 12345 Test\"\r\n    },\r\n    \"Warehouse\": {},\r\n    \"custom\": {},\r\n    \"files\": []\r\n}"
+				},
+				"url": {
+					"raw": "https://devservicestest-demo.myobadvanced.com/entity/Default/17.200.001/Vendor",
+					"protocol": "https",
+					"host": [
+						"devservicestest-demo",
+						"myobadvanced",
+						"com"
+					],
+					"path": [
+						"entity",
+						"Default",
+						"17.200.001",
+						"Vendor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vendor Payment Instructions in Single Call",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"Terms\": {\r\n        \"value\": \"CASHONLY\"\r\n    },\r\n    \"VendorClass\": {\r\n        \"value\": \"VENDDFT\"\r\n    },\r\n    \"VendorID\": {\r\n        \"value\": \"ABC123456\"\r\n    },\r\n    \"VendorName\": {\r\n        \"value\": \"ABC 123456 Test\"\r\n    },\r\n    \r\n    \"PaymentInstructions\": [\r\n        {\r\n            \r\n            \"Description\": {\r\n                \"value\": \"Account Number\"\r\n            },\r\n            \"PaymentInstructionsID\": {\r\n                \"value\": \"1\"\r\n            },\r\n            \"PaymentMethod\": {\r\n                \"value\": \"AUWBCDC\"\r\n            },\r\n            \"Value\": {\r\n            \t\"value\": \"12345688\"\r\n            },\r\n            \"custom\": {},\r\n            \"files\": []\r\n        },\r\n        {\r\n            \"Description\": {\r\n                \"value\": \"Title of Account\"\r\n            },\r\n            \"PaymentInstructionsID\": {\r\n                \"value\": \"2\"\r\n            },\r\n            \"PaymentMethod\": {\r\n                \"value\": \"AUWBCDC\"\r\n            },\r\n            \"Value\": {\r\n            \t\"value\": \"Test MYOB\"\r\n            },\r\n            \"custom\": {},\r\n            \"files\": []\r\n        },\r\n        {\r\n            \"Description\": {\r\n                \"value\": \"BSB Number\"\r\n            },\r\n           \r\n            \"PaymentInstructionsID\": {\r\n                \"value\": \"3\"\r\n            },\r\n            \"PaymentMethod\": {\r\n                \"value\": \"AUWBCDC\"\r\n            },\r\n            \"Value\": {\r\n            \t\"value\": \"111-333\"\r\n            },\r\n            \"custom\": {},\r\n            \"files\": []\r\n        }\r\n    ],\r\n   \r\n    \"PaymentMethod\": {\r\n        \"value\": \"AUWBCDC\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "https://2019eap-sandbox-myob-proserve1-18-6-2019.myobadvanced.com/entity/Default/18.200.001/Vendor",
+					"protocol": "https",
+					"host": [
+						"2019eap-sandbox-myob-proserve1-18-6-2019",
+						"myobadvanced",
+						"com"
+					],
+					"path": [
+						"entity",
+						"Default",
+						"18.200.001",
+						"Vendor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Confirm Shipment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"entity\": {\n    \n    \"ShipmentNbr\": {\n        \"value\": \"002707\"\n    },\n    \n    \"Type\": {\n        \"value\": \"Shipment\"\n    }\n}\n\n}"
+				},
+				"url": {
+					"raw": "https://devservicestest-demo.myobadvanced.com/entity/Default/17.200.001/Shipment/ConfirmShipment",
+					"protocol": "https",
+					"host": [
+						"devservicestest-demo",
+						"myobadvanced",
+						"com"
+					],
+					"path": [
+						"entity",
+						"Default",
+						"17.200.001",
+						"Shipment",
+						"ConfirmShipment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Map Imported Timesheets",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"entity\":{\n\t\"Batchnumber\": {\n        \"value\": \"TSB001508\"\n    }\n    \n\t}\n}"
+				},
+				"url": {
+					"raw": "https://myob-support1.myobadvanced.com/entity/ImportTimesheet/17.200.001/TimesheetImport/MapItems",
+					"protocol": "https",
+					"host": [
+						"myob-support1",
+						"myobadvanced",
+						"com"
+					],
+					"path": [
+						"entity",
+						"ImportTimesheet",
+						"17.200.001",
+						"TimesheetImport",
+						"MapItems"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Customer",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"CustomerID\": {\r\n        \"value\": \"ABCTEST\"\r\n    },\r\n    \"CustomerName\": {\r\n        \"value\": \"ABC Test\"\r\n    },\r\n    \"Status\": {\r\n        \"value\": \"Active\"\r\n    },\r\n\r\n    \"TaxZone\": {\r\n        \"value\": \"DOMESTIC\"\r\n    },\r\n    \"Terms\": {\r\n        \"value\": \"30THMONTH\"\r\n    },\r\n    \r\n    \"custom\": {},\r\n    \"files\": []\r\n}"
+				},
+				"url": {
+					"raw": "https://devservicestest-demo.myobadvanced.com/entity/Default/17.200.001/Customer",
+					"protocol": "https",
+					"host": [
+						"devservicestest-demo",
+						"myobadvanced",
+						"com"
+					],
+					"path": [
+						"entity",
+						"Default",
+						"17.200.001",
+						"Customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Import Timesheet",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Batchnumber\": {\r\n        \"value\": \"1\"\r\n    },\r\n    \"Datasourcetype\": {\r\n        \"value\": \"DEFAULT\"\r\n    },\r\n    \"Details\": [\r\n        {\r\n            \r\n            \"ExtEmployeeID\": {\r\n                \"value\": \"0001\"\r\n            },\r\n            \"ExtEmployeeName\": {\r\n                \"value\": \"Kelly\"\r\n            },\r\n            \"ExtPayItemID\": {\r\n                \"value\": \"BASE PAY\"\r\n            },\r\n            \"ExtSubAccount\": {\r\n                \"value\": \"BUSINESS-MANAGEMENT\"\r\n            },\r\n            \"PayDate\": {\r\n                \"value\": \"2019-06-25T00:00:00+00:00\"\r\n            },\r\n            \"PayItemID\": {\r\n                \"value\": \"ALLKILOM\"\r\n            },\r\n            \"PayItemIDPayItemID\": {\r\n                \"value\": \"ALLKILOM\"\r\n            },\r\n            \"PayrunID\": {},\r\n            \"Quantity\": {\r\n                \"value\": 2.0\r\n            },\r\n            \"SubAccountID\": {\r\n                \"value\": \"00000\"\r\n            },\r\n            \r\n            \"TransactionDate\": {\r\n                \"value\": \"2019-06-25T00:00:00+00:00\"\r\n            },\r\n            \"custom\": {},\r\n            \"files\": []\r\n        },\r\n        {\r\n            \r\n            \r\n            \"ExtEmployeeID\": {\r\n                \"value\": \"0005\"\r\n            },\r\n            \"ExtEmployeeName\": {\r\n                \"value\": \"Jenny\"\r\n            },\r\n            \"ExtPayItemID\": {\r\n                \"value\": \"BASE PAY\"\r\n            },\r\n            \"ExtSubAccount\": {\r\n                \"value\": \"BUSINESS-MANAGEMENT\"\r\n            },\r\n            \"PayDate\": {\r\n                \"value\": \"2019-06-25T00:00:00+00:00\"\r\n            },\r\n            \"PayItemID\": {\r\n                \"value\": \"ALLKILOM\"\r\n            },\r\n            \"PayItemIDPayItemID\": {\r\n                \"value\": \"ALLKILOM\"\r\n            },\r\n            \"PayrunID\": {},\r\n            \"Quantity\": {\r\n                \"value\": 1.0\r\n            },\r\n            \"SubAccountID\": {\r\n                \"value\": \"00000\"\r\n            },\r\n            \r\n            \"TransactionDate\": {\r\n                \"value\": \"2019-06-25T00:00:00+00:00\"\r\n            },\r\n            \"custom\": {},\r\n            \"files\": []\r\n        },\r\n        {\r\n            \r\n           \r\n            \"ExtEmployeeID\": {\r\n                \"value\": \"0002\"\r\n            },\r\n            \"ExtEmployeeName\": {\r\n                \"value\": \"Sally\"\r\n            },\r\n            \"ExtPayItemID\": {\r\n                \"value\": \"BASE PAY\"\r\n            },\r\n            \"ExtSubAccount\": {\r\n                \"value\": \"BUSINESS-MANAGEMENT\"\r\n            },\r\n            \"PayDate\": {\r\n                \"value\": \"2019-06-25T00:00:00+00:00\"\r\n            },\r\n            \"PayItemID\": {\r\n                \"value\": \"ALLKILOM\"\r\n            },\r\n            \"PayItemIDPayItemID\": {\r\n                \"value\": \"ALLKILOM\"\r\n            },\r\n            \"PayrunID\": {},\r\n            \"Quantity\": {\r\n                \"value\": 2.0\r\n            },\r\n            \"SubAccountID\": {\r\n                \"value\": \"00000\"\r\n            },\r\n            \r\n            \"TransactionDate\": {\r\n                \"value\": \"2019-06-25T00:00:00+00:00\"\r\n            },\r\n            \"custom\": {},\r\n            \"files\": []\r\n        },\r\n        {\r\n            \r\n           \r\n            \"ExtEmployeeID\": {\r\n                \"value\": \"0003\"\r\n            },\r\n            \"ExtEmployeeName\": {\r\n                \"value\": \"JaiS\"\r\n            },\r\n            \"ExtPayItemID\": {\r\n                \"value\": \"BASE PAY\"\r\n            },\r\n            \"ExtSubAccount\": {\r\n                \"value\": \"BUSINESS-MANAGEMENT\"\r\n            },\r\n            \"PayDate\": {\r\n                \"value\": \"2019-06-25T00:00:00+00:00\"\r\n            },\r\n            \"PayItemID\": {\r\n                \"value\": \"ALLKILOM\"\r\n            },\r\n            \"PayItemIDPayItemID\": {\r\n                \"value\": \"ALLKILOM\"\r\n            },\r\n            \"PayrunID\": {},\r\n            \"Quantity\": {\r\n                \"value\": 3.0\r\n            },\r\n            \"SubAccountID\": {\r\n                \"value\": \"00000\"\r\n            },\r\n            \r\n            \"TransactionDate\": {\r\n                \"value\": \"2019-06-25T00:00:00+00:00\"\r\n            },\r\n            \"custom\": {},\r\n            \"files\": []\r\n        },\r\n        {\r\n            \r\n           \r\n            \"ExtEmployeeID\": {\r\n                \"value\": \"0004\"\r\n            },\r\n            \"ExtEmployeeName\": {\r\n                \"value\": \"Leon\"\r\n            },\r\n            \"ExtPayItemID\": {\r\n                \"value\": \"BASE PAY\"\r\n            },\r\n            \"ExtSubAccount\": {\r\n                \"value\": \"BUSINESS-MANAGEMENT\"\r\n            },\r\n            \"PayDate\": {\r\n                \"value\": \"2019-06-25T00:00:00+00:00\"\r\n            },\r\n            \"PayItemID\": {\r\n                \"value\": \"ALLKILOM\"\r\n            },\r\n            \"PayItemIDPayItemID\": {\r\n                \"value\": \"ALLKILOM\"\r\n            },\r\n            \"PayrunID\": {},\r\n            \"Quantity\": {\r\n                \"value\": 2.5\r\n            },\r\n            \"SubAccountID\": {\r\n                \"value\": \"00000\"\r\n            },\r\n            \r\n            \"TransactionDate\": {\r\n                \"value\": \"2019-06-25T00:00:00+00:00\"\r\n            },\r\n            \"custom\": {},\r\n            \"files\": []\r\n        }\r\n    ],\r\n    \"custom\": {},\r\n    \"files\": []\r\n}"
+				},
+				"url": {
+					"raw": "https://myob-support1.myobadvanced.com/entity/ImportTimesheet/17.200.001/TimesheetImport",
+					"protocol": "https",
+					"host": [
+						"myob-support1",
+						"myobadvanced",
+						"com"
+					],
+					"path": [
+						"entity",
+						"ImportTimesheet",
+						"17.200.001",
+						"TimesheetImport"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create AP Bill",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"Date\": {\r\n        \"value\": \"2019-07-18T00:00:00+00:00\"\r\n    },\r\n    \"Description\": {},\r\n    \"Details\": [\r\n        {\r\n            \"Account\": {\r\n                \"value\": \"200600\"\r\n            },\r\n            \"Amount\": {\r\n                \"value\": 33.1200\r\n            },\r\n            \"Description\": {\r\n                \"value\": \"PO Accrual\"\r\n            },\r\n            \"ExtendedCost\": {\r\n                \"value\": 33.1200\r\n            },\r\n           \r\n            \"Qty\": {\r\n                \"value\": 72.000000\r\n            },\r\n            \"Subaccount\": {\r\n                \"value\": \"00000\"\r\n            },\r\n            \"TaxCategory\": {\r\n                \"value\": \"DEFAULT\"\r\n            },\r\n            \"TransactionDescription\": {\r\n                \"value\": \"CAT6 UTP Crossover Cables\"\r\n            },\r\n            \"UnitCost\": {\r\n                \"value\": 0.460000\r\n            },\r\n            \"UOM\": {\r\n                \"value\": \"METRE\"\r\n            },\r\n            \"custom\": {},\r\n            \"files\": []\r\n        },\r\n        {\r\n           \r\n            \"Account\": {\r\n                \"value\": \"200600\"\r\n            },\r\n            \"Amount\": {\r\n                \"value\": 79.8700\r\n            },\r\n            \"Description\": {\r\n                \"value\": \"PO Accrual\"\r\n            },\r\n            \"ExtendedCost\": {\r\n                \"value\": 79.8700\r\n            },\r\n           \r\n            \"Qty\": {\r\n                \"value\": 163.000000\r\n            },\r\n            \"Subaccount\": {\r\n                \"value\": \"00000\"\r\n            },\r\n            \"TaxCategory\": {\r\n                \"value\": \"DEFAULT\"\r\n            },\r\n            \"TransactionDescription\": {\r\n                \"value\": \"CAT6a UTP Crossover Cables\"\r\n            },\r\n            \"UnitCost\": {\r\n                \"value\": 0.490000\r\n            },\r\n            \"UOM\": {\r\n                \"value\": \"METRE\"\r\n            },\r\n            \"custom\": {},\r\n            \"files\": []\r\n        },\r\n        {\r\n           \r\n            \"Account\": {\r\n                \"value\": \"200600\"\r\n            },\r\n            \"Amount\": {\r\n                \"value\": 14.1600\r\n            },\r\n            \"Description\": {\r\n                \"value\": \"PO Accrual\"\r\n            },\r\n            \"ExtendedCost\": {\r\n                \"value\": 14.1600\r\n            },\r\n           \r\n            \"Qty\": {\r\n                \"value\": 24.000000\r\n            },\r\n            \"Subaccount\": {\r\n                \"value\": \"00000\"\r\n            },\r\n            \"TaxCategory\": {\r\n                \"value\": \"DEFAULT\"\r\n            },\r\n            \"TransactionDescription\": {\r\n                \"value\": \"CAT6a STP Shielded Patch Leads\"\r\n            },\r\n            \"UnitCost\": {\r\n                \"value\": 0.590000\r\n            },\r\n            \"UOM\": {\r\n                \"value\": \"METRE\"\r\n            },\r\n            \"custom\": {},\r\n            \"files\": []\r\n        }\r\n    ],\r\n    \"DueDate\": {\r\n        \"value\": \"2016-05-31T00:00:00+00:00\"\r\n    },\r\n    \"Hold\": {\r\n        \"value\": false\r\n    },\r\n    \"PostPeriod\": {\r\n        \"value\": \"102016\"\r\n    },\r\n       \"Terms\": {\r\n        \"value\": \"NET60DAYS\"\r\n    },\r\n    \"Type\": {\r\n        \"value\": \"Bill\"\r\n    },\r\n    \"Vendor\": {\r\n        \"value\": \"WIDDONGK\"\r\n    },\r\n    \"VendorRef\": {\r\n        \"value\": \"Test0154\"\r\n    },\r\n    \"custom\": {},\r\n    \"files\": []\r\n}"
+				},
+				"url": {
+					"raw": "https://devservicestest-demo.myobadvanced.com/entity/Default/17.200.001/Bill",
+					"protocol": "https",
+					"host": [
+						"devservicestest-demo",
+						"myobadvanced",
+						"com"
+					],
+					"path": [
+						"entity",
+						"Default",
+						"17.200.001",
+						"Bill"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Purchase Order",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Date\": {\r\n        \"value\": \"2019-07-18T00:00:00+00:00\"\r\n    },\r\n    \"Description\": {\r\n        \"value\": \"Create PO Test\"\r\n    },\r\n   \r\n    \"Hold\": {\r\n        \"value\": true\r\n    },\r\n    \"Status\": {\r\n        \"value\": \"On Hold\"\r\n    },\r\n    \"Type\": {\r\n        \"value\": \"Normal\"\r\n    },\r\n    \"VendorID\": {\r\n        \"value\": \"ABCSTUDIOS\"\r\n    },\r\n    \"OrderNbr\": {\r\n        \"value\": \"002220\"\r\n    },\r\n    \"VendorRef\": {},\r\n    \"custom\": {},\r\n    \"files\": []\r\n}"
+				},
+				"url": {
+					"raw": "https://devservicestest-demo.myobadvanced.com/entity/Default/17.200.001/PurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"devservicestest-demo",
+						"myobadvanced",
+						"com"
+					],
+					"path": [
+						"entity",
+						"Default",
+						"17.200.001",
+						"PurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update PO Header",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Date\": {\r\n        \"value\": \"2019-07-18T00:00:00+00:00\"\r\n    },\r\n    \"Description\": {\r\n        \"value\": \"Create PO Test Update\"\r\n    },\r\n   \r\n    \"Hold\": {\r\n        \"value\": true\r\n    },\r\n    \"Status\": {\r\n        \"value\": \"On Hold\"\r\n    },\r\n    \"Type\": {\r\n        \"value\": \"Normal\"\r\n    },\r\n    \"VendorID\": {\r\n        \"value\": \"ABCSTUDIOS\"\r\n    },\r\n    \"OrderNbr\": {\r\n        \"value\": \"002220\"\r\n    },\r\n    \"VendorRef\": {},\r\n    \"custom\": {},\r\n    \"files\": []\r\n}"
+				},
+				"url": {
+					"raw": "https://devservicestest-demo.myobadvanced.com/entity/Default/17.200.001/PurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"devservicestest-demo",
+						"myobadvanced",
+						"com"
+					],
+					"path": [
+						"entity",
+						"Default",
+						"17.200.001",
+						"PurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update PO Lines",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Date\": {\r\n        \"value\": \"2019-07-18T00:00:00+00:00\"\r\n    },\r\n    \r\n    \"Details\": [\r\n        {\r\n            \r\n            \"InventoryID\": {\r\n                \"value\": \"301KITSTD1\"\r\n            },\r\n            \"LineDescription\": {\r\n                \"value\": \"Desktop Build v1 Update\"\r\n            },\r\n            \"LineNbr\": {\r\n                \"value\": 1\r\n            },\r\n            \"LineType\": {\r\n                \"value\": \"Goods for IN\"\r\n            },\r\n            \"OrderQty\": {\r\n                \"value\": 5.000000\r\n            },\r\n            \"OrderType\": {\r\n                \"value\": \"RO\"\r\n            },\r\n            \"UnitCost\": {\r\n                \"value\": 250.000000\r\n            },\r\n            \"UOM\": {\r\n                \"value\": \"PC\"\r\n            },\r\n            \"custom\": {},\r\n            \"files\": []\r\n        }\r\n    ],\r\n    \"Hold\": {\r\n        \"value\": true\r\n    },\r\n    \"Type\": {\r\n        \"value\": \"Normal\"\r\n    },\r\n    \"VendorID\": {\r\n        \"value\": \"ABCSTUDIOS\"\r\n    },\r\n     \"OrderNbr\": {\r\n        \"value\": \"002220\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "https://devservicestest-demo.myobadvanced.com/entity/Default/17.200.001/PurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"devservicestest-demo",
+						"myobadvanced",
+						"com"
+					],
+					"path": [
+						"entity",
+						"Default",
+						"17.200.001",
+						"PurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Sales Order",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"CustomerID\": {\r\n        \"value\": \"ABCSTUDIOS\"\r\n    },\r\n    \r\n    \"Date\": {\r\n        \"value\": \"2019-07-18T00:00:00+00:00\"\r\n    },\r\n    \"Details\": [\r\n        {\r\n            \r\n            \"Account\": {\r\n                \"value\": \"400100\"\r\n            },\r\n          \r\n            \"InventoryID\": {\r\n                \"value\": \"301CMPST01\"\r\n            },\r\n           \r\n            \"LineDescription\": {\r\n                \"value\": \"Tower Case - Metal Brush Finish\"\r\n            },\r\n            \"LineNbr\": {\r\n                \"value\": 1\r\n            },\r\n            \"LineType\": {\r\n                \"value\": \"Goods for Inventory\"\r\n            },\r\n            \r\n            \"OrderQty\": {\r\n                \"value\": 3.000000\r\n            },\r\n           \r\n            \"UnitPrice\": {\r\n                \"value\": 81.250000\r\n            },\r\n            \"UOM\": {\r\n                \"value\": \"PC\"\r\n            },\r\n            \"custom\": {},\r\n            \"files\": []\r\n        }\r\n    ],\r\n   \r\n    \"Hold\": {\r\n        \"value\": false\r\n    },\r\n   \r\n    \"OrderType\": {\r\n        \"value\": \"SO\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "https://devservicestest-demo.myobadvanced.com/entity/Default/17.200.001/SalesOrder",
+					"protocol": "https",
+					"host": [
+						"devservicestest-demo",
+						"myobadvanced",
+						"com"
+					],
+					"path": [
+						"entity",
+						"Default",
+						"17.200.001",
+						"SalesOrder"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
