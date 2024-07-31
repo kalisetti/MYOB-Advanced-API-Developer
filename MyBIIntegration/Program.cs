@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MyBIIntegration.Default;
+using MyBIIntegration.Integration;
 
 namespace MyBIIntegration {
 	internal class Program {
@@ -20,8 +21,9 @@ namespace MyBIIntegration {
 				);
 
 				try {
-					//You will add the integration code here
-					Console.WriteLine("Logged in...");
+					//Retrieving the list of customers with contacts
+					Console.WriteLine("Retrieving...");
+					InitialDataRetrieval.RetrieveListOfCustomers(soapClient);
 					Console.ReadLine();
 				}
 				catch (Exception e) {
