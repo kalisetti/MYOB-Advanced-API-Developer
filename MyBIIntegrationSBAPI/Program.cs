@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MyBIIntegrationSBAPI.MyBIIntegration;
+using MyBIIntegrationSBAPI.Integration;
 
 namespace MyBIIntegrationSBAPI {
 	internal class Program {
@@ -23,7 +24,9 @@ namespace MyBIIntegrationSBAPI {
 				try {
 					//You will add the integration code here
 					Console.WriteLine("After Login...");
+					InitialDataRetrieval.ExportCustomers(screen);
 				} catch (Exception e) {
+					screen.Logout();
 					Console.WriteLine(e);
 					Console.WriteLine();
 					Console.WriteLine("Press any key to continue");
