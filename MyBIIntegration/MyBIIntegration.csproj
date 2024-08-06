@@ -50,7 +50,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\ItemAvailabilityData\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Integration\InitialDataRetrieval.cs" />
+    <Compile Include="Integration\InitialDataRetrievalGI.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -74,6 +80,19 @@
     <None Include="Connected Services\Default\MyBIIntegration.Default.ProcessResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ItemAvailabilityData\0001.wsdl" />
+    <None Include="Connected Services\ItemAvailabilityData\MyBIIntegration.ItemAvailabilityData.Entity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ItemAvailabilityData\MyBIIntegration.ItemAvailabilityData.File.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ItemAvailabilityData\MyBIIntegration.ItemAvailabilityData.InvokeResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ItemAvailabilityData\MyBIIntegration.ItemAvailabilityData.ProcessResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -84,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\Default\" />
+    <WCFMetadataStorage Include="Connected Services\ItemAvailabilityData\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\Default\configuration91.svcinfo" />
@@ -93,6 +113,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\Default\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ItemAvailabilityData\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ItemAvailabilityData\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ItemAvailabilityData\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
