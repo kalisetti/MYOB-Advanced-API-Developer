@@ -25,6 +25,7 @@ namespace MyBIIntegrationSBAPI {
 					//You will add the integration code here
 					Console.WriteLine("After Login...");
 					InitialDataRetrieval.ExportCustomers(screen);
+					InitialDataRetrievalGI.ExportItemQuantities(screen);
 				} catch (Exception e) {
 					screen.Logout();
 					Console.WriteLine(e);
