@@ -40,7 +40,8 @@ namespace MyStoreIntegration {
 						soapClient.Endpoint.EndpointBehaviors.Add(new AccessTokenAdderBehavior(accessToken));
 						//You will add the integration code here
 						//PerforanceOptimization.ExportSalesOrders(soapClient);
-						PerforanceOptimization.ExportPayments(soapClient);
+						//PerforanceOptimization.ExportPayments(soapClient);
+						Attachments.ExportStockItemFiles(soapClient);
 					}
 					catch (Exception ex) { 
 						Console.WriteLine(ex);
