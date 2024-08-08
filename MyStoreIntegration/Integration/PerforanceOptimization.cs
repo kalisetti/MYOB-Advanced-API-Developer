@@ -8,6 +8,65 @@ using System.Threading.Tasks;
 
 namespace MyStoreIntegration.Integration {
 	internal class PerforanceOptimization {
+		//Retrieving the list of payments of a customer
+		public static void ExportPayments(DefaultSoapClient soapClient) {
+			Console.WriteLine("Retrieving the list of payments of a customer...");
+
+			//Input data
+			string customerID = "C000000003";
+			string docType = "Payment";
+
+			//Select the payments that should be exported
+			Payment soPaymentsToBeFound = new Payment {
+				ReturnBehavior = ReturnBehavior.OnlySpecified,
+
+				Type = new StringSearch { Value = docType },
+				CustomerID = new StringSearch { Value = customerID },
+
+				ReferenceNbr = new StringReturn()
+			};
+			Entity[] payments = soapClient.GetList(soPaymentsToBeFound);
+
+			//Retrieve the payments one by one
+			foreach (Payment payment in payments) {
+				Payment soPaymentToBeRetrieved = new Payment {
+					ReturnBehavior = ReturnBehavior.OnlySpecified,
+
+					Type = new StringSearch { Value = payment.Type.Value },
+					ReferenceNbr = new StringSearch { Value = payment.ReferenceNbr.Value },
+
+					ApplicationDate = new DateTimeReturn(),
+					Status = new StringReturn(),
+					ApplicationHistory = new PaymentApplicationHistoryDetail[] {
+						new PaymentApplicationHistoryDetail {
+							DisplayDocType = new StringReturn(),
+							DisplayRefNbr = new StringReturn(),
+						}
+					} 
+				};
+				Payment result = (Payment)soapClient.Get(soPaymentToBeRetrieved);
+
+				//Save the results to a CSV file
+				using (StreamWriter file = new StreamWriter(string.Format(@"Payment_{0}.csv", payment.ReferenceNbr.Value))) {
+					//Add headers to the file
+					file.WriteLine("Type;ReferenceNbr;ApplicationDate;Status;DisplayDocType;DisplayRefNbr;");
+
+					foreach (PaymentApplicationHistoryDetail detail in result.ApplicationHistory) {
+						file.WriteLine(string.Format("{0};{1};{2};{3};{4};{5};",
+							// Document summary
+							result.Type.Value,
+							result.ReferenceNbr.Value,
+							result.ApplicationDate.Value,
+							result.Status.Value,
+							//Application details
+							detail.DisplayDocType.Value,
+							detail.DisplayRefNbr.Value
+						));
+					}
+				}
+			}
+		}
+
 		//Retrieving the list of sales orders of a customer
 		public static void ExportSalesOrders(DefaultSoapClient soapClient) {
 			Console.WriteLine("Getting the list of sales orders of a customer...");
