@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MyStoreIntegration.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="IdentityEndpoint" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://localhost/PhoneRepairShop/identity</Value>
+    </Setting>
+    <Setting Name="ClientID" Type="System.String" Scope="User">
+      <Value Profile="(Default)">323BF95B-FBF3-7B3C-749A-42A4055066EC@MyTenant</Value>
+    </Setting>
+    <Setting Name="ClientSecret" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Y7QozNgaaHAF2S7o62ZujQ</Value>
+    </Setting>
+    <Setting Name="Username" Type="System.String" Scope="User">
+      <Value Profile="(Default)">admin</Value>
+    </Setting>
+    <Setting Name="Password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Admin@123456789</Value>
+    </Setting>
+    <Setting Name="Scope" Type="System.String" Scope="User">
+      <Value Profile="(Default)">api</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
