@@ -7,6 +7,58 @@ using MyStoreIntegration.Default;
 
 namespace MyStoreIntegration.Integration {
 	internal class CreationOfRecords {
+		//Creating a stock item with attributes
+		public static void CreateStockItem(DefaultSoapClient soapClient) {
+			Console.WriteLine("Creating a stock item with attributes...");
+
+			//Stock item data
+			string inventoryID = "BASESERV2";
+			string itemDescription = "Baseline level of performance";
+
+			//Item class that has attributes defined
+			string itemClass = "STOCKITEM";
+
+			//An attribute of the item class (STOCKITEM)
+			string attributeName1 = "Operation System";
+			string attributeValue1 = "Windows";
+
+			//An attribute of the item class (STOCKITEM)
+			string attributeName2 = "Version of Software";
+			string attributeValue2 = "Server 2012 R2";
+
+			//Specify the values of the new stock item
+			StockItem stockItemToBeCreated = new StockItem {
+				ReturnBehavior = ReturnBehavior.OnlySpecified,
+				InventoryID = new StringValue { Value = inventoryID },
+				Description = new StringValue { Value = itemDescription },
+				ItemClass = new StringValue { Value = itemClass },
+				Attributes = new[] {
+					new AttributeValue {
+						AttributeID = new StringValue {Value = attributeName1 },
+						Value = new StringValue { Value = attributeValue1 }
+					},
+					new AttributeValue {
+						AttributeID = new StringValue {Value = attributeName2 },
+						Value = new StringValue { Value = attributeValue2 }
+					}
+				}
+			};
+
+			//Create a stock item with the specified values
+			StockItem newStockItem = (StockItem)soapClient.Put(stockItemToBeCreated);
+
+			//Display the summary of the created stock item
+			Console.WriteLine("Inventory ID: " + newStockItem.InventoryID.Value);
+			foreach (AttributeValue attr in newStockItem.Attributes) {
+				Console.WriteLine("Attribute name: " + attr.AttributeID.Value);
+				Console.WriteLine("Attribute value: " + attr.Value.Value);
+			}
+			Console.WriteLine();
+			Console.WriteLine("Press any key to continue");
+			Console.ReadLine();
+		}
+
+
 		//Creating a shipment
 		public static void CreateShipment(DefaultSoapClient soapClient) {
 			Console.WriteLine("Creating a shipment...");

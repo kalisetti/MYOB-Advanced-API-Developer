@@ -43,8 +43,11 @@ namespace MyStoreIntegration {
 						//PerforanceOptimization.ExportPayments(soapClient);
 						//Attachments.ExportStockItemFiles(soapClient);
 
-						//Create Shipment
-						CreationOfRecords.CreateShipment(soapClient);
+						////Create Shipment
+						//CreationOfRecords.CreateShipment(soapClient);
+
+						//Create Stock Item with Attributes
+						CreationOfRecords.CreateStockItem(soapClient);
 					}
 					catch (Exception ex) { 
 						Console.WriteLine(ex);
