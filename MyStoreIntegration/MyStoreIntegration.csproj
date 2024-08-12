@@ -95,6 +95,7 @@
     <Compile Include="Integration\Attachments.cs" />
     <Compile Include="Integration\CreationOfRecords.cs" />
     <Compile Include="Integration\PerforanceOptimization.cs" />
+    <Compile Include="Integration\UpdateOfRecords.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

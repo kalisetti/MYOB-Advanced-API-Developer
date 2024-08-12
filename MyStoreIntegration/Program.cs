@@ -46,8 +46,11 @@ namespace MyStoreIntegration {
 						////Create Shipment
 						//CreationOfRecords.CreateShipment(soapClient);
 
-						//Create Stock Item with Attributes
-						CreationOfRecords.CreateStockItem(soapClient);
+						////Create Stock Item with Attributes
+						//CreationOfRecords.CreateStockItem(soapClient);
+
+						//Update customer billing contact
+						UpdateOfRecords.UpdateCustomer(soapClient);
 					}
 					catch (Exception ex) { 
 						Console.WriteLine(ex);
