@@ -61,6 +61,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Integration\Attachments.cs" />
+    <Compile Include="Integration\CreationOfRecords.cs" />
     <Compile Include="Integration\PerformanceOptimization.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

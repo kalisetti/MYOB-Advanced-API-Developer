@@ -41,7 +41,10 @@ namespace MyStoreIntegration {
 						//You will add the integration code here
 						//PerforanceOptimization.ExportSalesOrders(soapClient);
 						//PerforanceOptimization.ExportPayments(soapClient);
-						Attachments.ExportStockItemFiles(soapClient);
+						//Attachments.ExportStockItemFiles(soapClient);
+
+						//Create Shipment
+						CreationOfRecords.CreateShipment(soapClient);
 					}
 					catch (Exception ex) { 
 						Console.WriteLine(ex);
