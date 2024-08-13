@@ -58,8 +58,11 @@ namespace MyStoreIntegration {
 						////Call Action
 						//Actions.ReleaseSOInvoice(soapClient);
 
-						//Adding a Note to a Stock Item Record
-						Attachments.AddNoteToStockItem(soapClient);
+						////Adding a Note to a Stock Item Record
+						//Attachments.AddNoteToStockItem(soapClient);
+
+						//Attaching a File to a Stock Item Record
+						Attachments.AddFileToStockItem(soapClient);
 					}
 					catch (Exception ex) { 
 						Console.WriteLine(ex);
