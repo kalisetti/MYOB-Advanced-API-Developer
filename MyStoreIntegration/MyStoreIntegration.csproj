@@ -92,6 +92,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Helper\LongRunProcessor.cs" />
+    <Compile Include="Integration\Actions.cs" />
     <Compile Include="Integration\Attachments.cs" />
     <Compile Include="Integration\CreationOfRecords.cs" />
     <Compile Include="Integration\PerforanceOptimization.cs" />

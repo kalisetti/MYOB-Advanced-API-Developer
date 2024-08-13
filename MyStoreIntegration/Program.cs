@@ -52,8 +52,11 @@ namespace MyStoreIntegration {
 						////Update customer billing contact
 						//UpdateOfRecords.UpdateCustomer(soapClient);
 
-						//Update sales order line qty & delete a line item
-						UpdateOfRecords.UpdateSO(soapClient);
+						////Update sales order line qty & delete a line item
+						//UpdateOfRecords.UpdateSO(soapClient);
+
+						//Call Action
+						Actions.ReleaseSOInvoice(soapClient);
 					}
 					catch (Exception ex) { 
 						Console.WriteLine(ex);
